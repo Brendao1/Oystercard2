@@ -28,7 +28,7 @@ MAX_LIMIT = 90
   end
 
   def touch_out
-   !@in_journey = false
+   @in_journey = false
   end
 
 end

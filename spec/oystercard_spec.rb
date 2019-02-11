@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'oystercard'
 describe Oystercard do
 
@@ -14,7 +13,7 @@ describe Oystercard do
 
     it 'can top up the balance' do
     expect { subject.top_up 2 }.to change{ subject.balance }.by 2
-    # is 1 here a reference to the argument? NO IT IS AN AMOUNT
+    # is 2 here a reference to the argument? NO IT IS AN AMOUNT
 
   end
 
@@ -42,7 +41,7 @@ end
   describe '#in_journey?' do
     it 'is in journey if the card is in journey' do
       expect(subject.in_journey?).to eq false
-      # here we use () instead of {} becaue it's an argument not a block
+      # here we use () instead of {} because it's an argument not a block
     end
   end
 
@@ -50,6 +49,7 @@ end
     it 'touches in and changes the value of in_journey to true' do
     subject.touch_in
     expect(subject.in_journey?).to eq true
+    # we use the method in_journey? rather than @in_journey because we can't access the variable outside the class
     end
   end
 
@@ -60,7 +60,4 @@ end
     end
   end
 
-=======
-describe Oystercard do
->>>>>>> 387740f44bba18da16714173a2d74635513981d7
 end

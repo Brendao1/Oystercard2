@@ -32,16 +32,6 @@ o.deduct(10) => @balance -= amount
 In order to get through the barriers.
 As a customer
 I need to touch in and out.
-o = Oystercard.new
-o.in_journey? = false
-if touch_in == true
-then @in_journey = true
-if touch_out == true
-then @in_journey = false
-end
-end
-
-****
 require './lib/oystercard'
 o = Oystercard.new
 o.in_journey? == false
