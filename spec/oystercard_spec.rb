@@ -37,4 +37,26 @@ end
   end
 end
 
+
+  describe '#in_journey?' do
+    it 'is in journey if the card is in journey' do
+      expect(subject.in_journey?).to eq false
+      # here we use () instead of {} becaue it's an argument not a block
+    end
+  end
+
+  describe '#touch_in' do
+    it 'touches in and changes the value of in_journey to true' do
+    subject.touch_in
+    expect(subject.in_journey?).to eq true
+    end
+  end
+
+  describe '#touch_out' do
+    it 'touches out and changes the value of in_journey to false' do
+    subject.touch_out
+    expect(subject.in_journey?).to eq false
+    end
+  end
+
 end
