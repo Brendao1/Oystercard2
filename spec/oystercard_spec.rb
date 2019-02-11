@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'oystercard'
 describe Oystercard do
 
@@ -59,4 +60,7 @@ end
     end
   end
 
+=======
+describe Oystercard do
+>>>>>>> 387740f44bba18da16714173a2d74635513981d7
 end
