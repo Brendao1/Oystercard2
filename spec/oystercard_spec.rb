@@ -65,6 +65,12 @@ end
     subject.touch_out
     expect(subject.in_journey?).to eq false
     end
+
+    it 'touches out and deducts the fare from the balance' do
+    o = Oystercard.new
+    o.top_up(90)
+    expect { o.touch_out }.to change { o.balance }.by (-Oystercard::FARE) 
+    end
   end
 
 end

@@ -5,6 +5,7 @@ attr_accessor :in_journey
 
 MAX_LIMIT = 90
 MIN_LIMIT = 1
+FARE = 1.50
 
   def initialize
     @balance = 0
@@ -31,6 +32,8 @@ MIN_LIMIT = 1
 
   def touch_out
    @in_journey = false
+
+   @balance -= FARE 
   end
 
 end

@@ -47,3 +47,22 @@ I need to have the minimum amount (£1) for a single journey.
 require './lib/oystercard'
 o = Oystercard.new
 o.touch_in = raise_error "Not enough money on your card"
+
+
+In order to pay for my journey
+As a customer
+When my journey is complete, I need the correct amount deducted from my card
+
+# let's assume the journey costs £1
+require './lib/oystercard'
+o = Oystercard.new
+o.top_up(20)
+o.touch_in
+
+o.balance
+=> 20
+
+o.touch_out
+
+o.balance
+=> 19
