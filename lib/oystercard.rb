@@ -23,7 +23,7 @@ FARE = 1.50
   end
 
   def in_journey?
-    @in_journey
+    @entry_station != nil
   end
 
   def touch_in(station)
@@ -34,8 +34,8 @@ FARE = 1.50
 
   def touch_out
    @in_journey = false
-
    @balance -= FARE
+   @entry_station = nil
   end
 
 end
