@@ -47,10 +47,17 @@ end
 
   describe '#touch_in' do
     it 'touches in and changes the value of in_journey to true' do
-    subject.touch_in
-    expect(subject.in_journey?).to eq true
+    o = Oystercard.new
+    o.top_up(10)
+    o.touch_in
+    expect(o.in_journey?).to eq true
     # we use the method in_journey? rather than @in_journey because we can't access the variable outside the class
     end
+
+    it 'will not touch in if below minimum balance' do
+      expect{ subject.touch_in }.to raise_error "Insufficient balance to touch in"
+    end
+
   end
 
   describe '#touch_out' do

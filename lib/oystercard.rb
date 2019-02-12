@@ -4,6 +4,7 @@ attr_reader :balance
 attr_accessor :in_journey
 
 MAX_LIMIT = 90
+MIN_LIMIT = 1
 
   def initialize
     @balance = 0
@@ -24,7 +25,8 @@ MAX_LIMIT = 90
   end
 
   def touch_in
-   @in_journey = true
+    fail "Insufficient balance to touch in" if @balance < MIN_LIMIT
+    @in_journey = true
   end
 
   def touch_out
