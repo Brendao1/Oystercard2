@@ -1,7 +1,6 @@
 require 'oystercard'
 describe Oystercard do
 
-
   it 'has a balance of zero' do
   expect(subject.balance).to eq(0)
   end
@@ -46,16 +45,25 @@ end
   end
 
   describe '#touch_in' do
+  let(:station){ double :station }
+
+  it 'stores the departure station' do
+    o = Oystercard.new
+    o.top_up(10)
+    o.touch_in(station)
+    expect(o.entry_station).to eq station
+  end
+
     it 'touches in and changes the value of in_journey to true' do
     o = Oystercard.new
     o.top_up(10)
-    o.touch_in
+    o.touch_in(station)
     expect(o.in_journey?).to eq true
     # we use the method in_journey? rather than @in_journey because we can't access the variable outside the class
     end
 
     it 'will not touch in if below minimum balance' do
-      expect{ subject.touch_in }.to raise_error "Insufficient balance to touch in"
+      expect{ subject.touch_in(station) }.to raise_error "Insufficient balance to touch in"
     end
 
   end
@@ -69,7 +77,7 @@ end
     it 'touches out and deducts the fare from the balance' do
     o = Oystercard.new
     o.top_up(90)
-    expect { o.touch_out }.to change { o.balance }.by (-Oystercard::FARE) 
+    expect { o.touch_out }.to change { o.balance }.by (-Oystercard::FARE)
     end
   end
 
