@@ -70,6 +70,7 @@ end
       expect{ subject.touch_in(entry_station) }.to raise_error "Insufficient balance to touch in"
     end
 
+
   end
 
   describe '#touch_out' do
@@ -93,6 +94,17 @@ end
       o.touch_out(exit_station)
       expect(o.exit_station).to eq exit_station
     end
+
+    let(:journey){ {entry_station: entry_station, exit_station: exit_station} }
+
+    it 'stores a journey' do
+      o = Oystercard.new
+      o.top_up(20)
+      o.touch_in(entry_station)
+      o.touch_out(exit_station)
+      expect(o.trips).to include journey
+    end
+
   end
 
 end

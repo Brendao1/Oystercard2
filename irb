@@ -1,0 +1,6 @@
+
+require './lib/oystercard'
+o = Oystercard.new
+o.top_up(20)
+o.touch_in("holborn")
+o.touch_out("camden")
