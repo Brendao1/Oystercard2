@@ -37,9 +37,19 @@ FARE = 1.50
   def touch_out(station)
    @exit_station = station
    @balance -= FARE
-   @trips << {entry_station: @entry_station, exit_station: @exit_station}
-   @in_journey = false
-   @entry_station = nil
+   store_trips
+   @entry_station = nil   
+   # @trips << {entry_station: @entry_station, exit_station: @exit_station}
+   # @in_journey = false
+   # @entry_station = nil
+  end
+
+  def store_trips
+    if @exit_station != nil && @entry_station != nil
+      @trips << {entry_station: @entry_station, exit_station: @exit_station}
+      @in_journey = false
+    end
+    @trips
   end
 
 end
