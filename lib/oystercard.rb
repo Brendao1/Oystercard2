@@ -1,3 +1,5 @@
+require_relative 'station'
+
 class Oystercard
 
 attr_reader :balance, :entry_station, :exit_station
@@ -38,7 +40,7 @@ FARE = 1.50
    @exit_station = station
    @balance -= FARE
    store_trips
-   @entry_station = nil   
+   @entry_station = nil
    # @trips << {entry_station: @entry_station, exit_station: @exit_station}
    # @in_journey = false
    # @entry_station = nil
