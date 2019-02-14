@@ -98,7 +98,7 @@ end
     it 'checks that the default list of trips is empty' do
       o = Oystercard.new
       o.top_up(20)
-      expect(o.trips).to be_empty 
+      expect(o.trips).to be_empty
     end
 
     let(:journey){ {entry_station: entry_station, exit_station: exit_station} }
