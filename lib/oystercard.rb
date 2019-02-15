@@ -8,6 +8,7 @@ attr_accessor :trips
 MAX_LIMIT = 90
 MIN_LIMIT = 1
 FARE = 1
+PENALTY = 6
 
   def initialize
     @balance = 0
@@ -35,6 +36,7 @@ FARE = 1
     @journey.finish(station)
     @balance -= @journey.fare
     store_trips  # since entry and exit are in Journey, we need a Journey method to return the info about the journey
+    # @incomplete_journey = false
   end
 
   def store_trips
