@@ -44,6 +44,13 @@ end
     it 'will not touch in if below minimum balance' do
       expect{ subject.touch_in(entry_station) }.to raise_error "Insufficient balance to touch in"
     end
+
+    it "will charge a penalty when you touch in twice without touching out" do
+      o = Oystercard.new
+      o.top_up(20)
+      o.touch_in(entry_station)
+      expect{ o.touch_in(exit_station) }.to change{ o.balance }.by(-PENALTY)
+    end
   end
 
   describe '#touch_out' do
