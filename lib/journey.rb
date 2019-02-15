@@ -1,6 +1,7 @@
 class Journey
 
 FARE = 1
+PENALTY = 6
 
 attr_reader :entry, :exit
 
@@ -18,6 +19,8 @@ attr_reader :entry, :exit
   end
 
   def fare
-    FARE
+    in_journey? ? PENALTY : FARE
   end
+
+
 end
