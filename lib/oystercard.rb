@@ -1,4 +1,4 @@
-# require_relative 'station'
+require_relative 'journey'
 
 class Oystercard
 

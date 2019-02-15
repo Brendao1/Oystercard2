@@ -1,6 +1,29 @@
 
 require './lib/oystercard'
+require './lib/station'
+
+start = Station.new("Victoria", 1)
+dept = Station.new("camden", 2)
+
 o = Oystercard.new
 o.top_up(20)
-o.touch_in("holborn")
-o.touch_out("camden")
+# o.touch_in(start)  <--- comment this out for edge case
+o.touch_out(dept)
+
+o.balance
+
+
+
+
+require './lib/oystercard'
+require './lib/station'
+
+start = Station.new("Victoria", 1)
+dept = Station.new("camden", 2)
+
+o = Oystercard.new
+o.top_up(20)
+o.touch_in(start)
+# o.touch_out(dept)
+
+o.balance

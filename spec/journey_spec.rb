@@ -2,7 +2,7 @@ require 'journey'
 
 describe 'Journey' do
 
-  let(:entry_double) {double "Vic"}
+  let(:entry_double) {double "Victoria"}
   let(:exit_double) {double "Camden"}
 
   before :each do
