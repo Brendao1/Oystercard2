@@ -14,12 +14,13 @@ attr_reader :entry, :exit
     @exit = exit
   end
 
-  def in_journey?
-    @exit.nil?
+  def complete?
+    return true if (!@entry.nil? && !@exit.nil?)
+    false
   end
 
   def fare
-    in_journey? ? PENALTY : FARE
+    complete? ? FARE : PENALTY
   end
 
 
