@@ -17,4 +17,7 @@ attr_reader :entry, :exit
     @exit.nil?
   end
 
+  def fare
+    FARE
+  end
 end

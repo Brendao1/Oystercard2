@@ -35,4 +35,11 @@ it 'returns the minimum fare on a completed journey' do
   expect(@journey.fare).to eq Journey::FARE
 end
 
+it "returns the penalty fare when fare is called and has not touched out" do
+  expect(@journey.fare).to eq Journey::PENALTY
+end
+
+it "The penalty fare is 6" do
+  expect(Journey::PENALTY).to eq 6
+end
 end
