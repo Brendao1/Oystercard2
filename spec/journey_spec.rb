@@ -22,6 +22,11 @@ it 'sets exit station when tapping out' do
 end
 
 it "is in a journey on creation" do
+  expect(@journey.in_journey?).to eq true
+end
 
+it "is not in a journey after finishing" do
+  @journey.finish(exit_double)
+  expect(@journey.in_journey?).to eq false 
 end
 end
