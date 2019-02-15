@@ -33,8 +33,8 @@ end
 it "is not a complete journey when you tap out without tapping in" do
   @journey = Journey.new()
   @journey.finish(exit_double)
-  expect(@journey.complete).to eq false
-end 
+  expect(@journey.complete?).to eq false
+end
 
 it 'returns the minimum fare on a completed journey' do
   @journey.finish(exit_double)

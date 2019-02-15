@@ -5,7 +5,7 @@ PENALTY = 6
 
 attr_reader :entry, :exit
 
-  def initialize(entry)
+  def initialize(entry = nil)
     @entry = entry
     @exit = nil
   end
