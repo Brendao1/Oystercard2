@@ -6,6 +6,8 @@ attr_reader :entry, :exit
     @entry = entry
     @exit = nil
   end
-
+  def finish(exit)
+    @exit = exit 
+  end
 
 end
