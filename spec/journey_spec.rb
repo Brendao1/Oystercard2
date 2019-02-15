@@ -27,6 +27,12 @@ end
 
 it "is not in a journey after finishing" do
   @journey.finish(exit_double)
-  expect(@journey.in_journey?).to eq false 
+  expect(@journey.in_journey?).to eq false
 end
+
+it 'returns the minimum fare on a completed journey' do
+  @journey.finish(exit_double)
+  expect(@journey.fare).to eq Journey::FARE
+end
+
 end

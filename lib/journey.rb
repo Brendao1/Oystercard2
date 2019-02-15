@@ -1,5 +1,7 @@
 class Journey
 
+FARE = 1
+
 attr_reader :entry, :exit
 
   def initialize(entry)
@@ -12,7 +14,7 @@ attr_reader :entry, :exit
   end
 
   def in_journey?
-    @exit ? false : true
+    @exit.nil?
   end
 
 end
