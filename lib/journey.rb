@@ -6,8 +6,13 @@ attr_reader :entry, :exit
     @entry = entry
     @exit = nil
   end
+
   def finish(exit)
-    @exit = exit 
+    @exit = exit
+  end
+
+  def in_journey?
+    @exit ? false : true
   end
 
 end
